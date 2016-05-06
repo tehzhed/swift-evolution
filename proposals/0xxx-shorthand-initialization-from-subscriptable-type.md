@@ -1,15 +1,30 @@
 # Shorthand syntax for variable initalization from subscriptable type
 
 * Proposal: [SE-NNNN](https://github.com/apple/swift-evolution/blob/master/proposals/NNNN-name.md)
-* Author(s): [Swift Developer](https://github.com/tehzhed)
+* Author(s): [Daniele Riccardelli](https://github.com/tehzhed)
 * Status: **[Awaiting review](#rationale)**
 * Review manager: TBD
 
 ## Introduction
 
-A short description of what the feature is. Try to keep it to a
-single-paragraph "elevator pitch" so the reader understands what
-problem this proposal is addressing.  
+Using Python's terminology, as of today Swift allows us to unpack tuples:
+```swift
+let (name, surname, nickname) = ("Daniele", "Riccardelli", "tehzhed")
+```
+
+But this syntax is counterintuitive: the left-hand side in fact doesn't initialize a tuple, but 3 distinct variables.
+The idea is to simplify the syntax in the following way:
+```swift
+let name, surname, nickname = ("Daniele", "Riccardelli", "tehzhed")
+```
+In a fashion similar to the one found in Python (where this idea originates from).
+Swift is a language designed for simplicity and intuitiveness of syntax, and therefore, it is natural to consider every subscriptable type to allow unpacking values.
+
+Therefore, this would be allowed:
+```swift
+let, name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
+```
+Similarly would happen with non constants ```swift var```s.
 
 Swift-evolution thread: [link to the discussion thread for that proposal](https://lists.swift.org/pipermail/swift-evolution)
 
