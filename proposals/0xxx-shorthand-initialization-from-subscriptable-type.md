@@ -38,8 +38,6 @@ let name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
 ```
 The same syntax would be used to initialize non constants ```var```s.
 
-## Detailed design
-
 ## Impact on existing code
 
 This proposal suggests a new shorthand syntax that doesn't break compatibility with existing code.
