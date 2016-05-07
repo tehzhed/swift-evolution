@@ -22,7 +22,7 @@ Swift is a language designed for simplicity and intuitiveness of syntax, and the
 
 Therefore, this would be allowed:
 ```swift
-let, name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
+let name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
 ```
 Similarly would happen with non constants ```var```s.
 
