@@ -24,7 +24,7 @@ Therefore, this would be allowed:
 ```swift
 let, name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
 ```
-Similarly would happen with non constants ```swift var```s.
+Similarly would happen with non constants ```var```s.
 
 Swift-evolution thread: [link to the discussion thread for that proposal](https://lists.swift.org/pipermail/swift-evolution)
 
