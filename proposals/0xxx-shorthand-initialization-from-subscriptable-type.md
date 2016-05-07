@@ -54,16 +54,17 @@ reasonably implement the feature.
 
 ## Impact on existing code
 
-Describe the impact that this change will have on existing code. Will some
-Swift applications stop compiling due to this change? Will applications still
-compile but produce different behavior than they used to? Is it
-possible to migrate existing Swift code to use a new feature or API
-automatically?
+This proposals suggests a new shorthand syntax that doesn't break compatibility with existing code.
 
 ## Alternatives considered
 
-Describe alternative approaches to addressing the same problem, and
-why you chose this approach instead.
+One alternative could be to use the syntax currently used to unpack tuples into variables for all subscriptable types:
+
+```swift
+let (name, surname, nickname) = ["Daniele", "Riccardelli", "tehzhed"]
+```
+
+While this would still allow more concise and readable code, would still be less intuitive and slightly more verbose than the approach suggested above.
 
 -------------------------------------------------------------------------------
 
