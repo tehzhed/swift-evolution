@@ -47,7 +47,6 @@ This proposal suggests a new shorthand syntax that doesn't break compatibility w
 ## Alternatives considered
 
 One alternative could be to use the syntax currently used to unpack tuples into variables for all subscriptable types:
-
 ```swift
 let (name, surname, nickname) = ["Daniele", "Riccardelli", "tehzhed"]
 ```
