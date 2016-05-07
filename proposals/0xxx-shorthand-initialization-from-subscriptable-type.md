@@ -40,7 +40,14 @@ The same syntax would be used to initialize non constants ```var```s.
 
 ## Impact on existing code
 
-This proposal suggests a new shorthand syntax that doesn't break compatibility with existing code.
+This proposal suggests a new shorthand syntax that breaks compatibility with existing code. Accounting for this syntax update is straightforward and simply consists of getting rid of opening and closing brackets when unpacking a tuple. Therefore this:
+```swift
+let (name, surname, nickname) = ("Daniele", "Riccardelli", "tehzhed")
+```
+would be updated to this:
+```swift
+let name, surname, nickname = ("Daniele", "Riccardelli", "tehzhed")
+```
 
 ## Alternatives considered
 
