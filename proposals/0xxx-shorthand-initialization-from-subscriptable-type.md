@@ -25,12 +25,6 @@ Swift-evolution thread: [link to the discussion thread for that proposal](https:
 
 ## Proposed solution
 
-Describe your solution to the problem. Provide examples and describe
-how they work. Show how your solution is better than current
-workarounds: is it cleaner, safer, or more efficient?
-
-## Detailed design
-
 The idea is to slightly change and generalize the unpacking syntax in the following way:
 ```swift
 let name, surname, nickname = ("Daniele", "Riccardelli", "tehzhed")
@@ -42,7 +36,9 @@ Therefore, this would be allowed:
 ```swift
 let name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
 ```
-Similarly would happen with non constants ```var```s.
+The same syntax would be used to initialize non constants ```var```s.
+
+## Detailed design
 
 ## Impact on existing code
 
