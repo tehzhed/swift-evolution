@@ -16,7 +16,7 @@ let (name, surname, nickname) = ("Daniele", "Riccardelli", "tehzhed")
 
 ## Motivation
 
-Nonetheless, this syntax is counterintuitive: the left-hand side in fact doesn't initialize a tuple, but *n* distinct variables where n is the size of the tuple. 
+Nonetheless, this syntax is counterintuitive: the left-hand side in fact doesn't initialize a tuple, but *n* distinct variables where *n* is the size of the tuple. 
 What is also counterintuitive is that, differently from Python, in Swift there is no way of unpacking from types other than tuples.
 
 The idea is to simplify the syntax and allow it to be used, similarly to Python, on all subscriptable types to unpack values.
