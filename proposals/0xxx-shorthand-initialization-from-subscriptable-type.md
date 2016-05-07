@@ -36,7 +36,7 @@ The idea is to slightly change and generalize the unpacking syntax in the follow
 let name, surname, nickname = ("Daniele", "Riccardelli", "tehzhed")
 ```
 In a fashion similar to the one found in Python (where this idea originates from).
-Swift is a language designed for simplicity and intuitiveness of syntax, and therefore, it is natural to consider every subscriptable type to allow unpacking values.
+[Swift is a powerful and intuitive programming language that is designed to make writing and maintaining correct programs easier](https://github.com/apple/swift-evolution/blob/master/process.md), and therefore, it is natural to consider every subscriptable type to allow unpacking values.
 
 Therefore, this would be allowed:
 ```swift
