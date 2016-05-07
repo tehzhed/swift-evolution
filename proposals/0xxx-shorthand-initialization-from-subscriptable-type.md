@@ -7,13 +7,31 @@
 
 ## Introduction
 
-Using Python's terminology, as of today Swift allows us to unpack tuples:
+A great feature of the Python programming language that aims to conciseness and simplicity of the code is the possibility to unpack subscriptable types.
+
+Swift is missing such an elegant feature, but, in a similar fashion, allows to initialize variables from tuples like this:
 ```swift
 let (name, surname, nickname) = ("Daniele", "Riccardelli", "tehzhed")
 ```
 
-But this syntax is counterintuitive: the left-hand side in fact doesn't initialize a tuple, but 3 distinct variables.
-The idea is to simplify the syntax in the following way:
+## Motivation
+
+Nonetheless, this syntax is counterintuitive: the left-hand side in fact doesn't initialize a tuple, but 3 distinct variables. 
+What is also counterintuitive is that, differently from Python, in Swift there is no way of unpacking from types other than tuples.
+
+The idea is to simplify the syntax and allow it to be used, similarly to Python, on all subscriptable types to unpack values.
+
+Swift-evolution thread: [link to the discussion thread for that proposal](https://lists.swift.org/pipermail/swift-evolution)
+
+## Proposed solution
+
+Describe your solution to the problem. Provide examples and describe
+how they work. Show how your solution is better than current
+workarounds: is it cleaner, safer, or more efficient?
+
+## Detailed design
+
+The idea is to slightly change and generalize the unpacking syntax in the following way:
 ```swift
 let name, surname, nickname = ("Daniele", "Riccardelli", "tehzhed")
 ```
@@ -25,32 +43,6 @@ Therefore, this would be allowed:
 let name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
 ```
 Similarly would happen with non constants ```var```s.
-
-Swift-evolution thread: [link to the discussion thread for that proposal](https://lists.swift.org/pipermail/swift-evolution)
-
-## Motivation
-
-Describe the problems that this proposal seeks to address. If the
-problem is that some common pattern is currently hard to express, show
-how one can currently get a similar effect and describe its
-drawbacks. If it's completely new functionality that cannot be
-emulated, motivate why this new functionality would help Swift
-developers create better Swift code.
-
-## Proposed solution
-
-Describe your solution to the problem. Provide examples and describe
-how they work. Show how your solution is better than current
-workarounds: is it cleaner, safer, or more efficient?
-
-## Detailed design
-
-Describe the design of the solution in detail. If it involves new
-syntax in the language, show the additions and changes to the Swift
-grammar. If it's a new API, show the full API and its documentation
-comments detailing what it does. The detail in this section should be
-sufficient for someone who is *not* one of the authors to be able to
-reasonably implement the feature.
 
 ## Impact on existing code
 
