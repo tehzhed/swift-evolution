@@ -46,7 +46,7 @@ Similarly would happen with non constants ```var```s.
 
 ## Impact on existing code
 
-This proposals suggests a new shorthand syntax that doesn't break compatibility with existing code.
+This proposal suggests a new shorthand syntax that doesn't break compatibility with existing code.
 
 ## Alternatives considered
 
