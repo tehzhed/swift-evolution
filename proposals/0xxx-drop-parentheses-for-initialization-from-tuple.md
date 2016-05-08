@@ -45,11 +45,11 @@ Of course, using constants here as an example, but the same syntax would be used
 
 ## Impact on existing code
 
-This proposal suggests a syntax change that would break compatibility with existing code. Nonetheless, accounting for this syntax update is straightforward and simply consists of getting rid of opening and closing parentheses when unpacking a tuple. Therefore this:
+This proposal suggests a syntax change that would break compatibility with existing code. Nonetheless, accounting for this syntax update is straightforward and simply consists of getting rid of opening and closing parentheses when unpacking a tuple. Therefore this line:
 ```swift
 let (name, surname) = ("John", "Doe")
 ```
-would have to be replaced with this:
+would have to be replaced with this one:
 ```swift
 let name, surname = ("John", "Doe")
 ```
