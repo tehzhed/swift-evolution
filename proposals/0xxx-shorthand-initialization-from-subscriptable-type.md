@@ -1,4 +1,4 @@
-# Shorthand syntax for variable initalization from subscriptable type
+# Drop parentheses for initalization from	tuple
 
 * Proposal: [SE-NNNN](https://github.com/apple/swift-evolution/blob/master/proposals/NNNN-name.md)
 * Author(s): [Daniele Riccardelli](https://github.com/tehzhed)
@@ -7,36 +7,41 @@
 
 ## Introduction
 
-A great feature of the Python programming language that aims to conciseness and simplicity of the code is the possibility to unpack subscriptable types.
-
-Swift is missing such an elegant feature, but, in a similar fashion, allows to initialize variables from tuples like this:
+The syntax for initialization from tuple is a bit more
+verbose than needed, i.e. why not simply drop the tuple parentheses and go
+from this :
 ```swift
-let (name, surname, nickname) = ("Daniele", "Riccardelli", "tehzhed")
+let (name, surname) =  ("John", "Doe")
 ```
+
+to this:
+```swift
+let name, surname =  ("John", "Doe")
+```
+
+similarly to what Python does with "unpackable" types:
+name, surname = ("John", "Doe")
+
 
 ## Motivation
 
-Nonetheless, this syntax is counterintuitive: the left-hand side in fact doesn't initialize a tuple, but *n* distinct variables where *n* is the size of the tuple. 
-What is also counterintuitive is that, differently from Python, in Swift there is no way of unpacking from types other than tuples.
+This is not a revolution, but if the concern is the trade-off between conciseness and readability, I think this way we are being more concise while not losing points in readability.
 
-The idea is to simplify the syntax and allow it to be used, similarly to Python, on all subscriptable types to unpack values.
-
-Swift-evolution thread: [link to the discussion thread for that proposal](https://lists.swift.org/pipermail/swift-evolution)
+Swift-evolution thread: [link to the discussion thread for that proposal](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160502/016804.html)
 
 ## Proposed solution
 
-The idea is to slightly change and generalize the unpacking syntax in the following way:
+My suggestion is simply to go from this syntax:
 ```swift
-let name, surname, nickname = ("Daniele", "Riccardelli", "tehzhed")
+let (name, surname) = ("John", "Doe")
 ```
-In a fashion similar to the one found in Python (where this idea originates from).
-[Swift is a powerful and **intuitive** programming language](https://github.com/apple/swift-evolution/blob/master/process.md), and it is indeed intuitive to consider every subscriptable type to allow unpacking values.
 
-Therefore, this would be allowed:
+to this:
 ```swift
-let name, surname, nickname = ["Daniele", "Riccardelli", "tehzhed"]
+let name, surname = ("John", "Doe")
 ```
-The same syntax would be used to initialize non constants ```var```s.
+
+Of course, using constants here as an example, but the same syntax would be used to initialize non constants ```var```s.
 
 ## Impact on existing code
 
@@ -49,19 +54,4 @@ would be updated to this:
 let name, surname, nickname = ("Daniele", "Riccardelli", "tehzhed")
 ```
 
-## Alternatives considered
-
-One alternative could be to use the syntax currently used to unpack tuples into variables for all subscriptable types:
-```swift
-let (name, surname, nickname) = ["Daniele", "Riccardelli", "tehzhed"]
-```
-
-While this would still allow more concise and readable code, would still be less intuitive and slightly more verbose than the approach suggested above.
-
 -------------------------------------------------------------------------------
-
-# Rationale
-
-On [Date], the core team decided to **(TBD)** this proposal.
-When the core team makes a decision regarding this proposal,
-their rationale for the decision will be written here.
