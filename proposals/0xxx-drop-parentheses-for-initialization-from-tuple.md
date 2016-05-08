@@ -49,7 +49,7 @@ This proposal suggests a syntax change that would break compatibility with exist
 ```swift
 let (name, surname) = ("John", "Doe")
 ```
-would be updated to this:
+would have to be replaced with this:
 ```swift
 let name, surname = ("John", "Doe")
 ```
